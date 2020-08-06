@@ -1,0 +1,162 @@
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+$(document).ready(() => {
+	let slides = [
+		document.getElementById("rec217618095"),
+		document.getElementById("rec217618262"),
+		document.getElementById("rec217618654"),
+		document.getElementById("rec217618959"),
+	]
+	
+	let dots = [
+			document.querySelector("[data-elem-id='1596537612272'] > div"),
+			document.querySelector("[data-elem-id='1596537632885'] > div"),
+			document.querySelector("[data-elem-id='1596537635092'] > div"),
+			document.querySelector("[data-elem-id='1596537636642'] > div"),
+	]
+	
+	let controls = {
+		prev: [
+			document.querySelector("[data-elem-id='1596537170296']"),
+			document.querySelector("[data-elem-id='1596537508390']")
+		],
+		next: [
+			document.querySelector("[data-elem-id='1596537500690']"),
+			document.querySelector("[data-elem-id='1596537195152']")
+		]
+	}
+
+	let mainWrapper = document.getElementById("rec217610132")
+	mainWrapper.style.position = "relative"
+
+	let wrapperInside = document.createElement("div")
+	wrapperInside.id = "wrapperInside"
+	wrapperInside.style.position = "absolute"
+	wrapperInside.style.left = 0
+	wrapperInside.style.top = 0
+	wrapperInside.style.width = "100%"
+	wrapperInside.style.height = "100%"
+
+	slides.forEach(slide => {
+	    slide.setAttribute("data-temp-id", slide.id)
+		wrapperInside.appendChild(slide)
+	})
+
+	mainWrapper.appendChild(wrapperInside)
+	$(wrapperInside).slick({
+		arrows: false,
+	})
+	
+	controls.prev.forEach(el => {
+		el.style.cursor = "pointer"
+		el.addEventListener("click", () => {
+			$(wrapperInside).slick("slickPrev")
+		})
+	})
+	controls.next.forEach(el => {
+		el.style.cursor = "pointer"
+		el.addEventListener("click", () => {
+			$(wrapperInside).slick("slickNext")
+		})
+	})
+	dots.forEach((dot, dotIndex) => {
+		dot.addEventListener("click", () => {
+			$(wrapperInside).slick("slickGoTo", dotIndex)
+		})
+		dot.style.cursor = "pointer"
+	})
+	dots[0].style.backgroundColor =	"#ABABAB"
+	$(wrapperInside).on("afterChange", (slick, currentSlide) => {
+		dots.forEach((dot, dotIndex) => {
+			dot.style.backgroundColor =	 dotIndex === currentSlide.currentSlide ? "#ABABAB" : "#E8E8E8"
+		})
+	})
+	
+	Array.from(document.querySelectorAll("[data-temp-id]")).forEach(el => {
+	    el.setAttribute("id", el.getAttribute("data-temp-id"))
+	})
+})
+</script>
+<script>
+$(document).ready(() => {
+	let slides = [
+		document.getElementById("rec217628161"),
+		document.getElementById("rec217628429"),
+		document.getElementById("rec217628439"),
+		document.getElementById("rec217628453"),
+		document.getElementById("rec217628485"),
+		document.getElementById("rec217628491"),
+	]
+	
+	let dots = [
+		document.querySelector("[data-elem-id='1596538921442'] > div"),
+		document.querySelector("[data-elem-id='1596538921448'] > div"),
+		document.querySelector("[data-elem-id='1596538921453'] > div"),
+		document.querySelector("[data-elem-id='1596538921459'] > div"),
+		document.querySelector("[data-elem-id='1596538965763'] > div"),
+		document.querySelector("[data-elem-id='1596538967726'] > div"),
+	]
+	
+	let controls = {
+		prev: [
+			document.querySelector("[data-elem-id='1596538921436']"),
+			document.querySelector("[data-elem-id='1596538921419']")
+		],
+		next: [
+			document.querySelector("[data-elem-id='1596538921431']"),
+			document.querySelector("[data-elem-id='1596538921425']")
+		]
+	}
+
+	let mainWrapper = document.getElementById("rec217621124")
+	mainWrapper.style.position = "relative"
+
+	let wrapperInside = document.createElement("div")
+	wrapperInside.id = "wrapperInside"
+	wrapperInside.style.position = "absolute"
+	wrapperInside.style.left = 0
+	wrapperInside.style.top = 0
+	wrapperInside.style.width = "100%"
+	wrapperInside.style.height = "100%"
+	
+	slides.forEach(slide => {
+	    slide.setAttribute("data-temp-id", slide.id)
+		wrapperInside.appendChild(slide)
+	})
+
+	mainWrapper.appendChild(wrapperInside)
+	$(wrapperInside).slick({
+		arrows: false,
+	})
+	
+	controls.prev.forEach(el => {
+		el.style.cursor = "pointer"
+		el.addEventListener("click", () => {
+			$(wrapperInside).slick("slickPrev")
+		})
+	})
+	controls.next.forEach(el => {
+		el.style.cursor = "pointer"
+		el.addEventListener("click", () => {
+			$(wrapperInside).slick("slickNext")
+		})
+	})
+	dots.forEach((dot, dotIndex) => {
+		dot.addEventListener("click", () => {
+			$(wrapperInside).slick("slickGoTo", dotIndex)
+		})
+		dot.style.cursor = "pointer"
+	})
+	dots[0].style.backgroundColor =	"#ABABAB"
+	$(wrapperInside).on("afterChange", (slick, currentSlide) => {
+		dots.forEach((dot, dotIndex) => {
+			dot.style.backgroundColor =	 dotIndex === currentSlide.currentSlide ? "#ABABAB" : "#E8E8E8"
+		})
+	})
+	
+	Array.from(document.querySelectorAll("[data-temp-id]")).forEach(el => {
+	    el.setAttribute("id", el.getAttribute("data-temp-id"))
+	})
+})
+</script>
